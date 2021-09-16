@@ -1,7 +1,8 @@
+//COM3
 #include <ArduinoBLE.h>
 
+
 void setup() {
-  pinMode(LEDB, OUTPUT);
   Serial.begin(9600);
   while (!Serial);
   // initialize the BLE hardware
@@ -28,6 +29,7 @@ void loop() {
     }
     // stop scanning
     BLE.stopScan();
+
     controlLed(peripheral);
     // peripheral disconnected, start scanning again
     BLE.scanForUuid("19b10000-e8f2-537e-4f6c-d104768a1214");
@@ -58,22 +60,48 @@ void controlLed(BLEDevice peripheral) {
     peripheral.disconnect();
     return;
   }
+
+
   while (peripheral.connected()) {
     // while the peripheral is connected
     if (LEDCharacteristic.canRead()) {
-      byte value = LEDCharacteristic.read();
-      LEDCharacteristic.readValue(value);
-      //Serial.println(LEDCharacteristic.readValue(value));
-      if (value == 0x01) {
-        Serial.println("ON");
-        digitalWrite(LEDB, HIGH);
-      }
-      else if (value == 0x00) {
-        digitalWrite(LEDB, LOW);
-        Serial.println("OFF");
+      byte value[16] = {0};
+      //value = LEDCharacteristic.read();
+      LEDCharacteristic.readValue(value, 16);
+
+      for (int x = 0; x < 16; x++) {
+        Serial.print(value[x]); Serial.print(",");
+        switch (x) {
+          case 0:
+            if ( value[x] > 250) {
+              digitalWrite(13, HIGH);
+            }
+            break;
+          case 1:
+            if ( value[x] > 250) {
+              digitalWrite(13, LOW);
+            }
+            break;
+          case 13:
+            if ( value[x] > 250) {
+            }
+            break;
+          case 14:
+            if ( value[x] == 1) {
+            }
+            break;
+          case 15:
+            if ( value[x] > 250) {
+            }
+            break;
+          default:
+            break;
+
+        }
       }
     }
-    delay(500);
+    Serial.println();
   }
+
   Serial.println("Peripheral disconnected");
 }
