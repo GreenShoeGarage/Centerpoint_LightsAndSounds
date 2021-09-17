@@ -6,33 +6,28 @@ BLEService LEDService("19B10000-E8F2-537E-4F6C-D104768A1214"); // BLE LED Servic
 // BLE LED Switch Characteristic - custom 128-bit UUID, read and writable by central
 BLECharacteristic LEDCharacteristic("19B10001-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify | BLEWrite, 16);
 
+#define SW_BLACK_D11 11    // Switch Black Wire (COMMON)
+#define SW_GREEN_A6 A6     // Switch Green Wire, Position 1
+#define SW_RED_D13 13      // Switch Red Wire, Position 2
+#define SW_WHITE_A7 A7     // Switch White Wire, Position 3
+
 #define J1_P1_A0 A0       // Output for Buttons 1, 5, 10
 #define J1_P2_A1 A1       // Output for Buttons 2, 6, 11
 #define J1_P3_A2 A2       // Output for Buttons 3, 7, 12
 #define J1_P4_A3 A3       // Output for Buttons 4, 8, 9, 13
+#define J1_P5_D2 2         // Keypad Column for Button 9
+#define J1_P6_D3 3         // Keypad Column for Buttons 10, 11, 12, 13
+#define J1_P7_D4 4         // Keypad Column for Buttons 1, 2, 3, 4
+#define J1_P8_D5 5         // Keypad Column for Buttons 5, 6, 7, 8
+#define J2_P1_D6 6         // Keypad Row for Buttons 5, 6, 7, 8, 9
+#define J2_P11_D10 10      // Keypad Row for Buttons 1,2,3,4,10,11,12,13
 
-#define SW_GREEN_D13 13    // Switch Green Wire
-#define SW_WHITE_A6 A6    // Switch White Wire
-#define SW_RED_A7 A7      // Switch Red Wire
+#define J2_P3_D7 7         // Button 1 LED GND   and    GREEN LED GND
+#define J2_P5_D8 8         // Button 2 LED GND   and    YELLOW LED GND
+#define J2_P7_D9 9         // Button 3 LED GND   and    RED LED GND
+#define J2_LEDGND_D12 12   // All Other Buttons LED GND
 
-int J1_P5_D2 = 2;         // Keypad Column for Button 9
-int J1_P6_D3 = 3;         // Keypad Column for Buttons 10, 11, 12, 13
-int J1_P7_D4 = 4;         // Keypad Column for Buttons 1, 2, 3, 4
-int J1_P8_D5 = 5;         // Keypad Column for Buttons 5, 6, 7, 8
-int J2_P1_D6 = 6;         // Keypad Row for Buttons 5, 6, 7, 8, 9
-int J2_P3_D7 = 7;         // Button 1 LED GND   and    GREEN LED GND
-int J2_P5_D8 = 8;         // Button 2 LED GND   and    YELLOW LED GND
-int J2_P7_D9 = 9;         // Button 3 LED GND   and    RED LED GND
-int J2_P11_D10 = 10;      // Keypad Row for Buttons 1,2,3,4,10,11,12,13
-int SW_BLACK_D11 = 11;    // Switch Black Wire (COMMON)
-int J2_LEDGND_D12 = 12;   // All Buttons LED GND
-
-byte inputArray[16] = {0};  //Switch Position 1,2,3 = G,R,W
-
-
-
-
-
+byte inputArray[16] = {0};  //Switch Position 1,2,3 = G-A6,R-D13,W-A7
 
 
 
@@ -160,9 +155,9 @@ void readInputs() {
   inputArray[12] = analogRead(J1_P4_A3);    //Output for Buttons 4, 8, 9, 13
 
 
-  //inputArray[13] = analogRead(A7);
-  inputArray[14] = digitalRead(SW_GREEN_D13);
-  //inputArray[15] = analogRead(A6);
+  inputArray[13] = analogRead(A6);
+  inputArray[14] = digitalRead(13);
+  inputArray[15] = analogRead(A7);
 
 }
 
