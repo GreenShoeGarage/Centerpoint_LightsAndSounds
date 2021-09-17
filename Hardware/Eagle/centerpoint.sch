@@ -4098,33 +4098,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="147.32" y1="30.48" x2="134.62" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$17" class="0">
-<segment>
-<pinref part="M1" gate="G$1" pin="A6"/>
-<wire x1="134.62" y1="38.1" x2="149.86" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="149.86" y1="38.1" x2="149.86" y2="-22.86" width="0.1524" layer="91"/>
-<pinref part="J3" gate="J1" pin="3"/>
-<wire x1="149.86" y1="-22.86" x2="157.48" y2="-22.86" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$19" class="0">
-<segment>
-<pinref part="J3" gate="J1" pin="2"/>
-<wire x1="152.4" y1="-20.32" x2="157.48" y2="-20.32" width="0.1524" layer="91"/>
-<pinref part="M1" gate="G$1" pin="A4"/>
-<wire x1="152.4" y1="-20.32" x2="152.4" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="152.4" y1="33.02" x2="134.62" y2="33.02" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$18" class="0">
-<segment>
-<pinref part="M1" gate="G$1" pin="A5"/>
-<wire x1="134.62" y1="35.56" x2="154.94" y2="35.56" width="0.1524" layer="91"/>
-<pinref part="J3" gate="J1" pin="1"/>
-<wire x1="154.94" y1="35.56" x2="154.94" y2="-17.78" width="0.1524" layer="91"/>
-<wire x1="154.94" y1="-17.78" x2="157.48" y2="-17.78" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$20" class="0">
 <segment>
 <pinref part="M1" gate="G$1" pin="GND.2"/>
@@ -4136,6 +4109,33 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <pinref part="J4" gate="G$1" pin="2"/>
 <wire x1="160.02" y1="55.88" x2="154.94" y2="55.88" width="0.1524" layer="91"/>
 <junction x="154.94" y="55.88"/>
+</segment>
+</net>
+<net name="N$17" class="0">
+<segment>
+<pinref part="M1" gate="G$1" pin="A7"/>
+<wire x1="134.62" y1="40.64" x2="154.94" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="J3" gate="J1" pin="1"/>
+<wire x1="154.94" y1="40.64" x2="154.94" y2="-17.78" width="0.1524" layer="91"/>
+<wire x1="154.94" y1="-17.78" x2="157.48" y2="-17.78" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$18" class="0">
+<segment>
+<pinref part="M1" gate="G$1" pin="A6"/>
+<wire x1="134.62" y1="38.1" x2="152.4" y2="38.1" width="0.1524" layer="91"/>
+<pinref part="J3" gate="J1" pin="2"/>
+<wire x1="152.4" y1="38.1" x2="152.4" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="152.4" y1="-20.32" x2="157.48" y2="-20.32" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$19" class="0">
+<segment>
+<pinref part="M1" gate="G$1" pin="D13/SCK"/>
+<wire x1="134.62" y1="15.24" x2="149.86" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="J3" gate="J1" pin="3"/>
+<wire x1="149.86" y1="15.24" x2="149.86" y2="-22.86" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="-22.86" x2="157.48" y2="-22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
