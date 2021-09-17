@@ -155,9 +155,9 @@ void readInputs() {
   inputArray[12] = analogRead(J1_P4_A3);    //Output for Buttons 4, 8, 9, 13
 
 
-  inputArray[13] = analogRead(A6);
+  inputArray[13] = 0; //analogRead(A6);
   inputArray[14] = digitalRead(13);
-  inputArray[15] = analogRead(A7);
+  inputArray[15] = 0; //analogRead(A7);
 
 }
 
