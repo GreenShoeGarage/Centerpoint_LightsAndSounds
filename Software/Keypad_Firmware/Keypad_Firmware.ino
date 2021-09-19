@@ -2,9 +2,7 @@
 #include <ArduinoBLE.h>
 #include "WiFiNINA.h"
 
-BLEService LEDService("19B10000-E8F2-537E-4F6C-D104768A1214"); // BLE LED Service
-// BLE LED Switch Characteristic - custom 128-bit UUID, read and writable by central
-BLECharacteristic LEDCharacteristic("19B10001-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify | BLEWrite, 16);
+
 
 #define SW_BLACK_D11 11    // Switch Black Wire (COMMON)
 #define SW_GREEN_A6 A6     // Switch Green Wire, Position 1
@@ -29,7 +27,9 @@ BLECharacteristic LEDCharacteristic("19B10001-E8F2-537E-4F6C-D104768A1214", BLER
 
 byte inputArray[16] = {0};  //Switch Position 1,2,3 = G-A6,R-D13,W-A7
 
-
+BLEService LEDService("19B10000-E8F2-537E-4F6C-D104768A1214"); // BLE LED Service
+// BLE LED Switch Characteristic - custom 128-bit UUID, read and writable by central
+BLECharacteristic LEDCharacteristic("19B10001-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify | BLEWrite, 16);
 
 void setup() {
 
