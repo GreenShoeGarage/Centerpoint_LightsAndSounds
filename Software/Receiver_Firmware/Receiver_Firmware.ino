@@ -1,13 +1,14 @@
-//COM3
+//COM3 - BLE Central
 #include <ArduinoBLE.h>
 
 
 void setup() {
   Serial.begin(9600);
-  while (!Serial);
+  //while (!Serial);
   // initialize the BLE hardware
   BLE.begin();
   Serial.println("BLE Central - LED control");
+  Serial.print("My address: "); Serial.println(BLE.address());
   // start scanning for LED BLE peripherals
   BLE.scanForUuid("19b10000-e8f2-537e-4f6c-d104768a1214");
 }
