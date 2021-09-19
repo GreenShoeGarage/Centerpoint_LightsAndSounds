@@ -4325,11 +4325,11 @@ part number 2062-2P from STA</description>
 </class>
 </classes>
 <parts>
-<part name="M1" library="diy-modules" deviceset="ARDUINO-NANO-3.0" device="" override_package3d_urn="urn:adsk.eagle:package:30895447/2" override_package_urn="urn:adsk.eagle:footprint:30895448/1"/>
-<part name="J1" library="SparkFun-Connectors" deviceset="CONN_10" device="&quot;" override_package3d_urn="urn:adsk.eagle:package:30895318/3" override_package_urn="urn:adsk.eagle:footprint:30895319/1"/>
-<part name="J2" library="SparkFun-Connectors" deviceset="CONN_13" device="" override_package3d_urn="urn:adsk.eagle:package:30895386/4" override_package_urn="urn:adsk.eagle:footprint:30895387/1"/>
-<part name="J3" library="SparkFun-Connectors" deviceset="CONN_04" device="PTH" override_package3d_urn="urn:adsk.eagle:package:30895441/2" override_package_urn="urn:adsk.eagle:footprint:30895442/1"/>
-<part name="J4" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="3.5MM" package3d_urn="urn:adsk.eagle:package:38050/1"/>
+<part name="M1" library="diy-modules" deviceset="ARDUINO-NANO-3.0" device="" override_package3d_urn="urn:adsk.eagle:package:30895447/3" override_package_urn="urn:adsk.eagle:footprint:30895448/1"/>
+<part name="J1" library="SparkFun-Connectors" deviceset="CONN_10" device="&quot;" override_package3d_urn="urn:adsk.eagle:package:30895318/4" override_package_urn="urn:adsk.eagle:footprint:30895319/1"/>
+<part name="J2" library="SparkFun-Connectors" deviceset="CONN_13" device="" override_package3d_urn="urn:adsk.eagle:package:30895386/5" override_package_urn="urn:adsk.eagle:footprint:30895387/1"/>
+<part name="J3" library="SparkFun-Connectors" deviceset="CONN_04" device="PTH" override_package3d_urn="urn:adsk.eagle:package:30895441/3" override_package_urn="urn:adsk.eagle:footprint:30895442/1"/>
+<part name="J4" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="3.5MM" package3d_urn="urn:adsk.eagle:package:38050/1" override_package3d_urn="urn:adsk.eagle:package:30895519/3" override_package_urn="urn:adsk.eagle:footprint:37656/1"/>
 </parts>
 <sheets>
 <sheet>
