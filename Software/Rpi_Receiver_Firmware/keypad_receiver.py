@@ -6,6 +6,11 @@ from bluepy import btle
 
 mac_address = "9c:9c:1f:e1:96:16"
 
+threshold_value = 250
+
+
+
+
 def main():
 
 
@@ -25,39 +30,42 @@ def main():
 
 
 
-def byte_array_to_int(value):
-    # Raw data is hexstring of int values, as a series of bytes, in little endian byte order
-    # values are converted from bytes -> bytearray -> int
-    # e.g., b'\xb8\x08\x00\x00' -> bytearray(b'\xb8\x08\x00\x00') -> 2232
 
-    # print(f"{sys._getframe().f_code.co_name}: {value}")
+def button_press_react(index, value):
+    print(index, end=":")
+    print(value)
 
-    value = bytearray(value)
-    value = int.from_bytes(value, byteorder="little")
-    return value
-
-
-def byte_array_to_char(value):
-    # e.g., b'2660,2058,1787,4097\x00' -> 2659,2058,1785,4097
-    value = value.decode("utf-8")
-    return value
-
-
-def decimal_exponent_two(value):
-    # e.g., 2350 -> 23.5
-    return value / 100
+    if (index==0 and value > threshold_value):
+        print("Button 1 Pressed.")
+    elif(index==1 and value > threshold_value):
+        print("Button 2 Pressed.")
+    elif(index==2 and value > threshold_value):
+        print("Button 3 Pressed.")
+    elif(index==13 and value > threshold_value):
+        print("Switch is in Position 1")
+    elif(index==14 and value==1):
+        print("Switch is in Position 2")
+    elif(index==15 and value > threshold_value):
+        print("Switch is in Position 3")
 
 
-def decimal_exponent_one(value):
-    # e.g., 988343 -> 98834.3
-    return value / 10
+
+def process_keypad_vals(values):
+    i = 0
+    while i < len(values):
+        button_press_react(i, values[i])
+        i += 1
+
+
 
 
 def read_keypad(service):
     keypad_char = service.getCharacteristics("19b10001-e8f2-537e-4f6c-d104768a1214")[0]
     keypad_vals = keypad_char.read()
-    keypad_vals = byte_array_to_int(keypad_vals)
     print(keypad_vals)
+    process_keypad_vals(keypad_vals)
+
+
 
 
 if __name__ == "__main__":
